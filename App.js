@@ -1,20 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { React, useEffect, useRef, useState } from 'react';
+import { StyleSheet, Animated, Text, View } from 'react-native';
+import Greeting from './Greeting';
+import Words from './Words';
 
 export default function App() {
+
+  const [isGreetOver, setIsGreetOver] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
+      <Greeting/> 
       <StatusBar style="auto" />
-    </View>
+      {/* <Words isGreetOver={isGreetOver}/> */}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
   },
 });
